@@ -48,6 +48,7 @@ function InfixToPostfix(str)
 
       finalPostfix = table.concat(postfixList, ' ')
 
+      print('Assignment 3-2, Brian Rafferty, bprafferty03@gmail.com')
       return finalPostfix
 
 
