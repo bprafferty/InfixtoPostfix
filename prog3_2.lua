@@ -3,7 +3,7 @@ function InfixToPostfix(str)
     currIndex = 1
     computationList = {}
     infixList = {}
-    postfixOutput = ""
+    postfixList = {}
     splitter = "%S+"
     listLength = 0
 
@@ -26,15 +26,15 @@ function InfixToPostfix(str)
         do
             if tonumber(infixList[increment]) ~= nil
                 then
-                    postfixOutput = postfixOutput .. infixList[increment]
+                    table.insert(postfixList, infixList[increment])
 
             else
                 while((next(computationList) ~= nil) and
                     (pemdas[tostring(computationList[#computationList])] >=
                     pemdas[tostring(infixList[increment])]))
                         do
-                            postfixOutput = postfixOutput .. computationList[#computationList]
-                            table.remove(computationList)
+                            table.insert(postfixList, table.remove(computationList))
+
                 end
                 table.insert(computationList, infixList[increment])
             end
@@ -42,10 +42,13 @@ function InfixToPostfix(str)
 
       while(next(computationList) ~= nil)
           do
-              postfixOutput = postfixOutput .. computationList[#computationList]
-              table.remove(computationList)
+              table.insert(postfixList, table.remove(computationList))
+
       end
 
-      return postfixOutput
+      finalPostfix = table.concat(postfixList, ' ')
+
+      return finalPostfix
+
 
 end
