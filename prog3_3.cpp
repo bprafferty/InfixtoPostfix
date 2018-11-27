@@ -22,13 +22,8 @@ int main(int argc, char *argv[]){
     lua_pushstring(luaLand, userFile.c_str());
     lua_pcall(luaLand, 1, 1, 0);
 
-    //if(luaL_checkstring(luaLand, 1)){
     cout << lua_tostring(luaLand, 1) << endl;
-    //}
-    //else {
-    //    cout << "Error" << endl;
-    //}
-
+    
     lua_close(luaLand);
     return 0;
 }
