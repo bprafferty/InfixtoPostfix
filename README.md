@@ -19,5 +19,5 @@ Following the header, the class creates a lua state and initializes it by openin
 in a file into the console following the initial program calling, and it will run it via the initialized lua state. 
 The class will then read in a line via cin and send it to the lua file's 'InfixToPostfix' function in the form of 
 a string. Following processing of the data, the lua program does the InfixToPostfix algorithm to rearrange the input.
-Following the operations and termination of the lua program, the state will be closed. All of the information that was 
-calculated in the lua state will be printed at the end of the prog3_3 if it is indeed a string. 
+Following the operations, all of the information that was calculated in the lua state will be printed at the end of 
+C++ state if it is indeed a string. Lastly, the lua state will be closed and the program will end.
