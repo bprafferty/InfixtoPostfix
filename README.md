@@ -18,5 +18,6 @@ prog3_3.cpp Class that prints the header for the program, including the assignme
 Following the header, the class creates a lua state and initializes it by opening the libraries. The user types 
 in a file into the console following the initial program calling, and it will run it via the initialized lua state. 
 The class will then read in a line via cin and send it to the lua file's 'InfixToPostfix' function in the form of 
-a string. Following processing of the data, the program does a check to see if the input is a correct file name.
-Following the termination of the lua program, the state will be closed.
+a string. Following processing of the data, the lua program does the InfixToPostfix algorithm to rearrange the input.
+Following the operations and termination of the lua program, the state will be closed. All of the information that was 
+calculated in the lua state will be printed at the end of the prog3_3 if it is indeed a string. 
